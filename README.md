@@ -36,5 +36,3 @@ npm start
 5. Upon clicking on submit button the isSubmitted key of user state is set to True and timer is set to 0
 6. The ReportPage.jsx Component consists of a tabular view of questions, correct_answers and response of the user
 ```
-
-### PS: It took me less than 6 hrs to complete this
