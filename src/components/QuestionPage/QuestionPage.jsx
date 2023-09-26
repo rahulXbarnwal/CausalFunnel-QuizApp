@@ -26,6 +26,8 @@ const QuestionPage = () => {
   shuffleArray(initialOptions);
   const [options, setOptions] = useState(initialOptions);
 
+  // At each second the component will be re-rendered
+  // When timer becomes 0 then - automatically redirect to /report
   useEffect(() => {
     const timeInterval = setInterval(() => {
       if (user.time > 0) {
@@ -39,10 +41,12 @@ const QuestionPage = () => {
     return () => clearInterval(timeInterval);
   }, [dispatch, user.time, navigate]);
 
+  // Function to shuffle the options
   function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
   }
 
+  // Handling the previous button
   const handlePrev = () => {
     if (index === 0) return;
     if (user.questionsColor[index - 1] === "red")
@@ -56,6 +60,7 @@ const QuestionPage = () => {
     setOptions(totalOptions);
   };
 
+  // Handling the next button
   const handleNext = () => {
     if (index === questions.length - 1) return;
     if (user.questionsColor[index + 1] === "red")
@@ -69,6 +74,8 @@ const QuestionPage = () => {
     setOptions(totalOptions);
   };
 
+  // On clicking on clear button, no options will be selected and
+  // color of the question Box will be yellow, since it is visited but not attempted
   const handleClear = () => {
     dispatch(updateSelectedOption({ index: index, selectedOption: null }));
     dispatch(updateQuestionColor({ index: index, color: "yellow" }));

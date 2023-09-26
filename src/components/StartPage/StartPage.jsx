@@ -22,6 +22,7 @@ function StartPage() {
     const getQuestions = async (dispatch, email) => {
       dispatch(fetchStart());
       try {
+        // Fetching the data from the API
         const res = await axios.get("https://opentdb.com/api.php?amount=15");
         const initialResponse = [],
           initialColor = [];
@@ -30,6 +31,8 @@ function StartPage() {
           if (i === 0) initialColor.push("yellow");
           else initialColor.push("red");
         }
+
+        // Setting the Redux state after the fetching is successful
         dispatch(
           fetchSuccess({
             questions: res.data.results,
