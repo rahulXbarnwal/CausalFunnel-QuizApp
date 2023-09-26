@@ -1,4 +1,4 @@
-# Quiz Application
+# Quiz Application : https://causalfunnel-quizapp.netlify.app/
 
 ### Technologies Used
 ```
