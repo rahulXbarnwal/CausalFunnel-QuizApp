@@ -1,0 +1,33 @@
+/* YourGridComponent.css */
+
+/* Styling for the grid container */
+.grid-container {
+  width: 100%;
+  margin: 20px auto;
+}
+
+/* Styling for the header row */
+.grid-header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* Styling for table cells */
+.grid-container .MuiTableCell-root {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+}
+
+/* Styling for odd rows (alternating row colors) */
+.grid-container .MuiTableRow-root:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  .grid-container .MuiTableCell-root {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
